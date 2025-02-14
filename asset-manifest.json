@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/from-you/static/css/main.89abacb8.css",
+    "main.css": "/from-you/static/css/main.18705637.css",
     "main.js": "/from-you/static/js/main.1786b2bc.js",
     "static/js/488.9c92ff38.chunk.js": "/from-you/static/js/488.9c92ff38.chunk.js",
     "static/media/button.svg": "/from-you/static/media/button.f5f5b9eaacce59814146.svg",
@@ -8,12 +8,12 @@
     "static/media/heart-grey.svg": "/from-you/static/media/heart-grey.cf0d573a03ec5a0626b3.svg",
     "static/media/heart-red.svg": "/from-you/static/media/heart-red.ab970818407202b4a564.svg",
     "static/media/heart-white.svg": "/from-you/static/media/heart-white.923208eea0c64e574637.svg",
-    "main.89abacb8.css.map": "/from-you/static/css/main.89abacb8.css.map",
+    "main.18705637.css.map": "/from-you/static/css/main.18705637.css.map",
     "main.1786b2bc.js.map": "/from-you/static/js/main.1786b2bc.js.map",
     "488.9c92ff38.chunk.js.map": "/from-you/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89abacb8.css",
+    "static/css/main.18705637.css",
     "static/js/main.1786b2bc.js"
   ]
 }
