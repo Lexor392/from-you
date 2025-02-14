@@ -1,0 +1,235 @@
+.pageone {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .bg-block {
+        width: 100%;
+        height: 100%;
+        background: red url('../../../public/images/button.svg') no-repeat center;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-size: 2000%;
+        /* Первая анимация (wait) длится 1 секунду и просто сохраняет крупное изображение,
+           вторая (shrink) начинается через 1 секунду и за 1 секунду плавно уменьшает его */
+        animation: waitTwo 1s linear forwards, shrinkThree 1s 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    h2 {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 10vw);
+            gap: 8vw;
+            padding: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 40px;
+            height: 34px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            outline: none;
+
+            &.active {
+                background: url('../../../public/images/heart-red.svg') no-repeat center / 100% 100%; // Зеленый
+                filter: sepia(1);
+                opacity: 0.2;
+                animation: fadeIn 120s forwards;
+                animation-delay: 10s;
+
+                &:hover {
+                    filter: sepia(0);
+                    opacity: 1;
+                }
+
+                &:active {
+                    filter: sepia(0);
+                    opacity: 1;
+                }
+            }
+
+            &.red-active {
+                filter: sepia(0);
+                opacity: 1;
+                animation: none;
+                animation: bottomAnim 4s forwards;
+            }
+
+            &.inactive {
+                background: url('../../../public/images/heart-grey.svg') no-repeat center / 100% 100%; // Синий
+                cursor: not-allowed;
+                transition: all 1s;
+                opacity: 1;
+            }
+
+            &.hidden {
+                opacity: 0;
+            }
+
+            &.shake {
+                animation: shake 0.5s ease-in-out;
+            }
+        }
+
+    }
+
+    .hearts-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: -23.55px;
+        position: relative;
+
+        img.bigHeart {
+            position: absolute;
+            bottom: 0;
+            width: 120%;
+        }
+
+        img.bigHeart.activeHeart {
+            animation: bottomAnimThree 4s forwards;
+        }
+
+        img.activeHeart {
+            animation: bottomAnimTwo 3s forwards;
+        }
+    }
+
+    .red-bg {
+        visibility: hidden;
+        width: 100%;
+        height: 0;
+        background: red;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+
+    .red-bg.activeBg {
+        visibility: visible;
+        background: red;
+        animation: bottomBg 3s forwards 0.4s;
+    }
+}
+
+@keyframes bottomBg {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 160vh;
+    }
+}
+
+@keyframes bottomAnimThree {
+    0% {
+        transform: translateY(0) translateX(-10%);
+    }
+
+    100% {
+        transform: translateY(160vh) translateX(-10%) rotate(80deg);
+    }
+}
+
+@keyframes bottomAnimTwo {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(120vh) rotate(80deg);
+    }
+}
+
+@keyframes bottomAnim {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(80deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        filter: sepia(1);
+        opacity: 0.2;
+    }
+
+    to {
+        filter: sepia(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+@keyframes waitTwo {
+    from {
+        background-size: 2000%;
+    }
+
+    to {
+        background-size: 2000%;
+    }
+}
+
+@keyframes shrinkThree {
+    from {
+        background-size: 2000%;
+    }
+
+    to {
+        background-color: #ffffff00;
+        background-size: 0px;
+    }
+}
